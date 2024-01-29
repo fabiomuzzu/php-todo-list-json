@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-12">
                     <ul>
-                        <li v-for="(todo, index) in todo_list" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
+                        <li v-for="(todo, index) in todoList" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
                             <div class="d-flex justify-content-between">
                                 <span>
                                     {{ todo }}
