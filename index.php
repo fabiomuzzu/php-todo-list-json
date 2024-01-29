@@ -20,19 +20,17 @@
                 </div>
                 <div class="col-12">
                     <!-- Sezione input e pulsante -->
-                    <form action="./index.php" method="GET">
-                        <div class="d-flex justify-content-center">
-                            <input class="align-middle form-control form-control-sm" name="task" type="text" placeholder="Aggiungi alla lista" v-model="newTask">
-                            <button type="submit" class="btn btn-primary" @click="">Aggiungi</button>
-                        </div>
-                    </form>
+                    <div class="d-flex justify-content-center">
+                        <input class="align-middle form-control form-control-sm" name="task" type="text" placeholder="Aggiungi alla lista" v-model="newTask" @keyup.enter="addTask">
+                        <button type="submit" class="btn btn-primary" @click="addTask">Aggiungi</button>
+                    </div>
                 </div>
                 <div class="col-12">
                     <ul>
                         <li v-for="(todo, index) in todoList" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
                             <div class="d-flex justify-content-between">
                                 <span>
-                                    {{ todo }}
+                                    {{ todo.text }}
                                 </span>
                                 <div class="buttons">
                                     <button type="button" class="btn btn-outline-danger" @click="">
