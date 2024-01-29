@@ -15,10 +15,14 @@ Prima assicuratevi che la vostra pagina index.php (il vostro front-end) riesca a
 Lo step successivo è quello di “testare" l'invio di un nuovo task, sapendo che manca comunque la persistenza lato server (ancora non memorizzate i dati da nessuna parte).
 Solo a questo punto sarà utile passare alla lettura della lista da un file JSON.
 
+Svolgimento:
+- Creo importo le varie cdn
+- Creo le funzioni per la todolist e imposto la grafica
+
 Bonus
 Mostrare lo stato del task → se completato, barrare il testo
 Permettere di segnare un task come completato facendo click sul testo
 Permettere il toggle del task (completato/non completato)
 Abilitare l’eliminazione di un task
-Aggiungere la possibilità di aggiungere un task
 Buon pranzo e buon lavoro!
+
