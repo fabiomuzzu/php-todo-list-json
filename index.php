@@ -23,7 +23,7 @@
                     <form action="./index.php" method="GET">
                         <div class="d-flex justify-content-center">
                             <input class="align-middle form-control form-control-sm" name="task" type="text" placeholder="Aggiungi alla lista" v-model="newTask">
-                            <button type="submit" class="btn btn-primary" @click="nuovaTask()">Aggiungi</button>
+                            <button type="submit" class="btn btn-primary" @click="">Aggiungi</button>
                         </div>
                     </form>
                 </div>
@@ -35,7 +35,7 @@
                                     {{ todo }}
                                 </span>
                                 <div class="buttons">
-                                    <button type="button" class="btn btn-outline-danger" @click="removeTodo(index)">
+                                    <button type="button" class="btn btn-outline-danger" @click="">
                                         <i class="fas fa-x"></i>
                                     </button>
                                 </div>
@@ -46,6 +46,6 @@
             </div>
         </div>
     </div>
-    <script src="./js/script.js" type="text/javascript"></scrip>
+    <script src="./js/script.js" type="text/javascript"></script>
 </body>
 </html>

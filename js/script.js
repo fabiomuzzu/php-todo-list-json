@@ -1,26 +1,23 @@
 
-const { createApp } = Vue 
+const { createApp } = Vue
 
 createApp({
     data() {
         return {
-        newTask: '',
-        
-    }
-},
-methods: {
-    removeTodo(index){
-        this.todo_list.splice(index,1);
+            apiUrl: 'server.php',
+            newTask: '',
+            todoList: [],
+        }
     },
-    
-    nuovaTask(){
-        let obj = {
-            text: this.newTask,
-            done: false
-        };
+    mounted(){
+        this.getTodoList();
+    },
+    methods: {
+        getTodoList() {
+            axios.get(this.apiUrl).then((response) => {
+                this.todoList = response.data;
+            });
+        }
 
-        this.todo_list.push(obj);
-        this.newTask = '';
-    }
-},
+    },
 }).mount('#app')
