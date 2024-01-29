@@ -13,6 +13,7 @@ createApp({
         this.getTodoList();
     },
     methods: {
+        // Funzione per aggiungere una nuova task
         addTask(){
             const data = {
                 todoItem: this.newTask
@@ -31,6 +32,5 @@ createApp({
                 this.todoList = response.data;
             });
         }
-
     },
 }).mount('#app')
