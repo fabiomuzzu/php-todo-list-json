@@ -1,3 +1,9 @@
+<?php 
+    if(isset($_GET['task']) && $_GET['task'] != ''){
+        var_dump($_GET['task']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +26,12 @@
                 </div>
                 <div class="col-12">
                     <!-- Sezione input e pulsante -->
-                    <div class="d-flex justify-content-center">
-                        <input class="align-middle form-control form-control-sm" type="text" placeholder="Aggiungi alla lista" v-model="newTask">
-                        <button type="button" class="btn btn-primary" @click="nuovaTask()">Aggiungi</button>
-                    </div>
+                    <form action="./index.php" method="GET">
+                        <div class="d-flex justify-content-center">
+                            <input class="align-middle form-control form-control-sm" name="task" type="text" placeholder="Aggiungi alla lista" v-model="newTask">
+                            <button type="submit" class="btn btn-primary" @click="nuovaTask()">Aggiungi</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-12">
                     <!-- Sezione lista -->
