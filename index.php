@@ -11,7 +11,40 @@
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-    
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Titolo -->
+                    <h1 class="text-center">Lista di cose da fare</h1>
+                </div>
+                <div class="col-12">
+                    <!-- Sezione input e pulsante -->
+                    <div class="d-flex justify-content-center">
+                        <input class="align-middle form-control form-control-sm" type="text" placeholder="Aggiungi alla lista" v-model="newTask">
+                        <button type="button" class="btn btn-primary" @click="nuovaTask()">Aggiungi</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- Sezione lista -->
+                    <ul>
+                        <li v-for="(todo, index) in todo_list" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
+                            <div class="d-flex justify-content-between">
+                                <span>
+                                    {{todo.text}}
+                                </span>
+                                <div class="buttons">
+                                    <button type="button" class="btn btn-outline-danger" @click="removeTodo(index)">
+                                        <i class="fas fa-x"></i>
+                                    </button>
+                                </div>
+                            </div>                    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/script.js" type="text/javascript"></scrip
 </body>
 </html>
