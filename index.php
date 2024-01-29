@@ -1,9 +1,3 @@
-<?php 
-    if(isset($_GET['task']) && $_GET['task'] != ''){
-        var_dump($_GET['task']);
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,12 +28,11 @@
                     </form>
                 </div>
                 <div class="col-12">
-                    <!-- Sezione lista -->
                     <ul>
                         <li v-for="(todo, index) in todo_list" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
                             <div class="d-flex justify-content-between">
                                 <span>
-                                    {{todo.text}}
+                                    {{ todo }}
                                 </span>
                                 <div class="buttons">
                                     <button type="button" class="btn btn-outline-danger" @click="removeTodo(index)">
@@ -53,6 +46,6 @@
             </div>
         </div>
     </div>
-    <script src="./js/script.js" type="text/javascript"></scrip
+    <script src="./js/script.js" type="text/javascript"></scrip>
 </body>
 </html>
