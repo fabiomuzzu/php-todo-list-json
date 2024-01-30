@@ -25,7 +25,7 @@
 
     if (isset($_POST['todoIndex'])) {
         $index = $_POST['todoIndex'];
-        if($list[$index]['done'] == false){
+        if($list[$index]['done'] == true){
             $list[$index]['done'] = false;
         }
         else{
