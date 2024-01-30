@@ -21,7 +21,18 @@
 
         // Salvo il contenuto nel file todolist.json 
         file_put_contents('todolist.json', json_encode($list));
-    }
+    };
+
+    if (isset($_POST['todoIndex'])) {
+        $index = $_POST['todoIndex'];
+        if($list[$index]['done'] == false){
+            $list[$index]['done'] = false;
+        }
+        else{
+            $list[$index]['done'] = true;
+        }
+        file_put_contents("todolist.json, json_encode($list)");
+    };
 
     // Utilizzo header per dichiarare che questo file è un json
     header('Content-type: application/json');

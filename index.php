@@ -27,14 +27,17 @@
                 </div>
                 <div class="col-12">
                     <ul>
-                        <li v-for="(todo, index) in todoList" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
+                        <li @click="toogleTodoStatus(index)" v-for="(todo, index) in todoList" :key="index" :class="todo.done ? 'text-decoration-line-through' : ''" class="my-2">
                             <div class="d-flex justify-content-between">
                                 <span>
                                     {{ todo.text }}
                                 </span>
                                 <div class="buttons">
-                                    <button type="button" class="btn btn-outline-danger" @click="">
+                                    <button type="button" class="btn btn-outline-danger mx-1" @click="">
                                         <i class="fas fa-x"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success" @click="toogleTodoStatus(index)" >
+                                        <i class="fas fa-check"></i>
                                     </button>
                                 </div>
                             </div>                    
