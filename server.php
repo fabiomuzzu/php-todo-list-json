@@ -5,6 +5,7 @@
     // Utilizzo decode per trasformare la stringa in array associativo
     $list = json_decode($todo_list, true);
 
+
     // Verifico se ho inviato tramite chiamata POST l'elemento nuovo da salvare nella lista
     if (isset($_POST['todoItem'])) {
 
@@ -21,17 +22,6 @@
 
         // Salvo il contenuto nel file todolist.json 
         file_put_contents('todolist.json', json_encode($list));
-    };
-
-    if (isset($_POST['todoIndex'])) {
-        $index = $_POST['todoIndex'];
-        if($list[$index]['done'] == true){
-            $list[$index]['done'] = false;
-        }
-        else{
-            $list[$index]['done'] = true;
-        }
-        file_put_contents("todolist.json, json_encode($list)");
     };
 
     // Utilizzo header per dichiarare che questo file è un json

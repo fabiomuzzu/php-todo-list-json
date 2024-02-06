@@ -36,7 +36,7 @@
                                     <button type="button" class="btn btn-outline-danger mx-1" @click="">
                                         <i class="fas fa-x"></i>
                                     </button>
-                                    <button type="button" class="btn btn-outline-success" @click="toogleTodoStatus(index)" >
+                                    <button type="button" class="btn btn-outline-success" @click="toggleDone">
                                         <i class="fas fa-check"></i>
                                     </button>
                                 </div>

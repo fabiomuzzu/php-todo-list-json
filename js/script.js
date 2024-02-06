@@ -6,22 +6,15 @@ createApp({
             apiUrl: 'server.php',
             newTask: '',
             todoList: [],
+            status: true,
         }
     },
     mounted(){
         this.getTodoList();
     },
     methods: {
-        toogleTodoStatus(index){
-            const data = {
-                taskIndex: index
-            }
+        toggleDone(){
 
-            axios.post(this.apiUrl, data, {
-                header: {'Content-type': 'multipart/form-data'}
-            }).then((response) => {
-                this.todoList = response.data
-            });
         },
         // Funzione per aggiungere una nuova task
         addTask(){
